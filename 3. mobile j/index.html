@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple jQuery Mobile Website</title>
+    
+    <!-- jQuery Mobile CSS Theme -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    
+    <!-- Custom Styles (Optional) -->
+    <style>
+        /* Add some padding to main content for better readability */
+        .ui-content {
+            padding: 20px;
+        }
+        /* Custom styling for the feature list */
+        .feature-icon {
+            margin-right: 10px;
+            color: #3388cc;
+        }
+    </style>
+
+    <!-- jQuery Library (Required for jQuery Mobile) -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+    <!-- jQuery Mobile JS -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <!-- ==============================================
+         Page 1: Home Page 
+         ============================================== -->
+    <div data-role="page" id="home">
+        
+        <!-- Header -->
+        <div data-role="header" data-theme="b">
+            <h1>My Mobile App</h1>
+        </div>
+
+        <!-- Main Content -->
+        <div role="main" class="ui-content">
+            <h2>Welcome!</h2>
+            <p>This is a simple, multi-page mobile website built entirely using <strong>jQuery Mobile</strong>. It is designed to be touch-friendly and responsive.</p>
+            
+            <!-- Navigation Buttons -->
+            <a href="#about" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-info ui-btn-icon-left" data-transition="slide">About Us</a>
+            <a href="#contact" class="ui-btn ui-corner-all ui-shadow ui-icon-mail ui-btn-icon-left" data-transition="flip">Contact Us</a>
+            
+            <!-- List View -->
+            <ul data-role="listview" data-inset="true" style="margin-top: 30px;">
+                <li data-role="list-divider" data-theme="b">App Features</li>
+                <li><a href="#">Responsive Design</a></li>
+                <li><a href="#">Touch Optimized UI</a></li>
+                <li><a href="#">Easy Page Transitions</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2026 jQuery Mobile App</h4>
+        </div>
+        
+    </div>
+
+    <!-- ==============================================
+         Page 2: About Page (Rendered as a Dialog)
+         ============================================== -->
+    <div data-role="page" id="about" data-dialog="true">
+        
+        <!-- Header -->
+        <div data-role="header" data-theme="a">
+            <h1>About Us</h1>
+        </div>
+
+        <!-- Main Content -->
+        <div role="main" class="ui-content">
+            <h3>Who we are</h3>
+            <p>We are a team of developers focused on building intuitive, fast, and accessible mobile experiences utilizing the power of jQuery Mobile.</p>
+            
+            <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Back to Home</a>
+        </div>
+        
+    </div>
+
+    <!-- ==============================================
+         Page 3: Contact Page 
+         ============================================== -->
+    <div data-role="page" id="contact">
+        
+        <!-- Header -->
+        <div data-role="header" data-theme="b" data-add-back-btn="true">
+            <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left ui-corner-all ui-shadow ui-btn-icon-notext" data-transition="slide" data-direction="reverse">Home</a>
+            <h1>Contact</h1>
+        </div>
+
+        <!-- Main Content -->
+        <div role="main" class="ui-content">
+            <h3>Get in touch</h3>
+            <p>Have a question? Drop us a message below.</p>
+            
+            <!-- Contact Form -->
+            <form action="#" method="post">
+                <div class="ui-field-contain">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name" value="" data-clear-btn="true">
+                </div>
+                
+                <div class="ui-field-contain">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="example@domain.com" value="" data-clear-btn="true">
+                </div>
+                
+                <div class="ui-field-contain">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" placeholder="Type your message here..."></textarea>
+                </div>
+                
+                <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-check ui-btn-icon-left" style="margin-top: 20px;">Send Message</button>
+            </form>
+        </div>
+        
+        <!-- Footer -->
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2026 jQuery Mobile App</h4>
+        </div>
+        
+    </div>
+
+</body>
+</html>

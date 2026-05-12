@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Admin Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            background-color: #f4f7f6; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        /* Sidebar Styling */
+        .sidebar { 
+            height: 100vh; 
+            background-color: #2c3e50; 
+            color: white; 
+            padding-top: 20px; 
+            position: fixed; 
+            width: 250px; 
+            z-index: 1000;
+        }
+        .sidebar a { 
+            color: #b8c7ce; 
+            text-decoration: none; 
+            padding: 15px 20px; 
+            display: block; 
+            transition: 0.3s; 
+        }
+        .sidebar a:hover, .sidebar a.active { 
+            background-color: #1a252f; 
+            color: white; 
+            border-left: 4px solid #3498db; 
+        }
+        .sidebar i { margin-right: 10px; width: 20px; text-align: center; }
+        
+        /* Main Content Styling */
+        .main-content { 
+            margin-left: 250px; 
+            padding: 20px; 
+        }
+        .card { 
+            border: none; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            margin-bottom: 20px; 
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .kpi-icon { 
+            font-size: 2.5rem; 
+            opacity: 0.8;
+        }
+        .navbar-top { 
+            background-color: white; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+            border-radius: 10px; 
+            padding: 10px 20px; 
+            margin-bottom: 20px; 
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar { 
+                width: 100%; 
+                height: auto; 
+                position: relative; 
+            }
+            .main-content { 
+                margin-left: 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="text-center mb-4"><i class="fas fa-heartbeat text-danger"></i> MediAdmin</h4>
+        <a href="#" class="active"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-user-injured"></i> Patients</a>
+        <a href="#"><i class="fas fa-calendar-check"></i> Appointments</a>
+        <a href="#"><i class="fas fa-user-md"></i> Doctors</a>
+        <a href="#"><i class="fas fa-file-medical-alt"></i> Reports</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navbar -->
+        <div class="navbar-top d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <h5 class="m-0 text-dark fw-bold">Overview</h5>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-light position-relative me-4 rounded-circle">
+                    <i class="fas fa-bell"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                </button>
+                <div class="d-flex align-items-center">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=3498db&color=fff" alt="User" class="rounded-circle shadow-sm" width="40">
+                    <span class="ms-2 fw-semibold d-none d-md-inline">Dr. Admin</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card p-3 d-flex flex-row align-items-center justify-content-between border-start border-primary border-4">
+                    <div>
+                        <h6 class="text-muted mb-1">Total Patients</h6>
+                        <h3 class="mb-0 fw-bold">1,245</h3>
+                    </div>
+                    <i class="fas fa-users kpi-icon text-primary"></i>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card p-3 d-flex flex-row align-items-center justify-content-between border-start border-warning border-4">
+                    <div>
+                        <h6 class="text-muted mb-1">Appointments</h6>
+                        <h3 class="mb-0 fw-bold">42</h3>
+                    </div>
+                    <i class="fas fa-calendar-alt kpi-icon text-warning"></i>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card p-3 d-flex flex-row align-items-center justify-content-between border-start border-success border-4">
+                    <div>
+                        <h6 class="text-muted mb-1">Available Doctors</h6>
+                        <h3 class="mb-0 fw-bold">18</h3>
+                    </div>
+                    <i class="fas fa-user-md kpi-icon text-success"></i>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card p-3 d-flex flex-row align-items-center justify-content-between border-start border-danger border-4">
+                    <div>
+                        <h6 class="text-muted mb-1">Operations Today</h6>
+                        <h3 class="mb-0 fw-bold">5</h3>
+                    </div>
+                    <i class="fas fa-procedures kpi-icon text-danger"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Appointments Table -->
+        <div class="card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="mb-0 fw-bold text-secondary">Recent Appointments</h5>
+                <button class="btn btn-sm btn-outline-primary">View All</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Doctor</th>
+                            <th>Date & Time</th>
+                            <th>Condition</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random&color=fff" class="rounded-circle me-2" width="30">
+                                    John Doe
+                                </div>
+                            </td>
+                            <td>Dr. Sarah Smith</td>
+                            <td><i class="far fa-clock text-muted"></i> 12 May 2026, 10:00 AM</td>
+                            <td>Fever</td>
+                            <td><span class="badge bg-success bg-opacity-10 text-success border border-success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Jane+Roe&background=random&color=fff" class="rounded-circle me-2" width="30">
+                                    Jane Roe
+                                </div>
+                            </td>
+                            <td>Dr. Mark Johnson</td>
+                            <td><i class="far fa-clock text-muted"></i> 12 May 2026, 11:30 AM</td>
+                            <td>Dental Checkup</td>
+                            <td><span class="badge bg-warning bg-opacity-10 text-warning border border-warning">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Michael+Brown&background=random&color=fff" class="rounded-circle me-2" width="30">
+                                    Michael Brown
+                                </div>
+                            </td>
+                            <td>Dr. Emily Davis</td>
+                            <td><i class="far fa-clock text-muted"></i> 12 May 2026, 01:15 PM</td>
+                            <td>Cardiology</td>
+                            <td><span class="badge bg-info bg-opacity-10 text-info border border-info">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Emily+White&background=random&color=fff" class="rounded-circle me-2" width="30">
+                                    Emily White
+                                </div>
+                            </td>
+                            <td>Dr. Sarah Smith</td>
+                            <td><i class="far fa-clock text-muted"></i> 13 May 2026, 09:00 AM</td>
+                            <td>General Checkup</td>
+                            <td><span class="badge bg-warning bg-opacity-10 text-warning border border-warning">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

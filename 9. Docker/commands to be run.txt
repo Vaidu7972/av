@@ -1,0 +1,6 @@
+1)docker --version
+2)docker info
+3)docker build -t tictactoe .
+4)docker images
+5)docker run -d -p 8080:80 tictactoe
+6)http://localhost:8080

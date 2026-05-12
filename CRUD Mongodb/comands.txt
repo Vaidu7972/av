@@ -1,0 +1,6 @@
+npm install
+mongod
+npm start 
+node app.js
+node monapp.js
+

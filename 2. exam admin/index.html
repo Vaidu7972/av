@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Admin Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        /* Sidebar Styling */
+        .sidebar {
+            height: 100vh;
+            background-color: #2c3e50;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #34495e;
+            border-left: 4px solid #3498db;
+        }
+        /* Main Content Styling */
+        .main-content {
+            margin-left: 16.666667%; /* Offset for col-md-2 */
+            padding: 20px 30px;
+        }
+        @media (max-width: 768px) {
+            .sidebar { position: static; height: auto; }
+            .main-content { margin-left: 0; }
+        }
+        /* Cards Styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        /* Gradient Backgrounds */
+        .bg-gradient-primary { background: linear-gradient(45deg, #4e73df, #224abe); color: white; }
+        .bg-gradient-success { background: linear-gradient(45deg, #1cc88a, #13855c); color: white; }
+        .bg-gradient-info { background: linear-gradient(45deg, #36b9cc, #258391); color: white; }
+        .bg-gradient-warning { background: linear-gradient(45deg, #f6c23e, #dda20a); color: white; }
+        
+        .opacity-50 { opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar Navigation -->
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <div class="text-center mb-4">
+                <h4 class="text-white"><i class="fas fa-graduation-cap text-primary"></i> ExamPanel</h4>
+            </div>
+            <a href="#" class="active"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-book me-2"></i> Manage Exams</a>
+            <a href="#"><i class="fas fa-users me-2"></i> Students</a>
+            <a href="#"><i class="fas fa-chart-bar me-2"></i> Results</a>
+            <a href="#"><i class="fas fa-cog me-2"></i> Settings</a>
+            <a href="#" class="mt-5 text-danger"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="col-md-10 main-content">
+            <!-- Header section -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+                <h1 class="h3">Dashboard Overview</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Create New Exam
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPI Summary Cards -->
+            <div class="row mb-4">
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card bg-gradient-primary h-100 py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="text-xs fw-bold text-uppercase mb-1">Total Students</div>
+                                    <div class="h5 mb-0 fw-bold">1,245</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-users fa-2x opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card bg-gradient-success h-100 py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="text-xs fw-bold text-uppercase mb-1">Active Exams</div>
+                                    <div class="h5 mb-0 fw-bold">12</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clipboard-list fa-2x opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card bg-gradient-info h-100 py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="text-xs fw-bold text-uppercase mb-1">Completed Exams</div>
+                                    <div class="h5 mb-0 fw-bold">85</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-check-circle fa-2x opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card bg-gradient-warning h-100 py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="text-xs fw-bold text-uppercase mb-1">Pending Results</div>
+                                    <div class="h5 mb-0 fw-bold">5</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clock fa-2x opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Exams Data Table -->
+            <div class="card mb-4">
+                <div class="card-header bg-white fw-bold py-3">
+                    <i class="fas fa-table me-1"></i> Recent Exams
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Exam ID</th>
+                                    <th>Course Name</th>
+                                    <th>Date</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="fw-bold">#EX-1001</span></td>
+                                    <td>Web Development Fundamentals</td>
+                                    <td>May 15, 2026</td>
+                                    <td>120 Min</td>
+                                    <td><span class="badge bg-success rounded-pill">Completed</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fw-bold">#EX-1002</span></td>
+                                    <td>Data Structures & Algorithms</td>
+                                    <td>May 18, 2026</td>
+                                    <td>90 Min</td>
+                                    <td><span class="badge bg-warning text-dark rounded-pill">Upcoming</span></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fw-bold">#EX-1003</span></td>
+                                    <td>Database Management Systems</td>
+                                    <td>May 20, 2026</td>
+                                    <td>120 Min</td>
+                                    <td><span class="badge bg-warning text-dark rounded-pill">Upcoming</span></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fw-bold">#EX-1004</span></td>
+                                    <td>Machine Learning Basics</td>
+                                    <td>May 25, 2026</td>
+                                    <td>180 Min</td>
+                                    <td><span class="badge bg-info rounded-pill">Draft</span></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary">Edit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
