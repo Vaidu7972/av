@@ -1,0 +1,100 @@
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git --version
+git version 2.49.0.windows.1
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git init
+Initialized empty Git repository in C:/Users/Lenovo/OneDrive/Attachments/Desktop/WAD/WAD ASSIGNMENT-2/Part a/.git/
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git add .
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git remote add origin "https://github.com/Neer45/wadassignment2a.git"
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git commit -m "First commit"
+[master (root-commit) e5a66dd] First commit
+ 1 file changed, 4 insertions(+)
+ create mode 100644 file1.txt
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git status 
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git push -u origin master
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/Neer45/wadassignment2a.git/'
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git config --global user.name "Neer45"
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git config --global user.email "neerwane13l@gmail.com"    
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git credential-manager configure
+Configuring component 'Git Credential Manager'...
+Configuring component 'Azure Repos provider'...
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git push -u origin master
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 91.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Neer45/wadassignment2a.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git add .
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file2.txt
+
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git commit -m "second  commit"                        
+[master b094273] second  commit
+ 1 file changed, 4 insertions(+)
+ create mode 100644 file2.txt
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> git push -u origin master       
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 332 bytes | 166.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Neer45/wadassignment2a.git
+   e5a66dd..b094273  master -> master
+branch 'master' set up to track 'origin/master'.
+PS C:\Users\Lenovo\OneDrive\Attachments\Desktop\WAD\WAD ASSIGNMENT-2\Part a> 
+commands:
+1)git --version
+2)git init
+3)git add .
+4)git status
+5)git remote add origin "https://github.com/Neer45/wadassignment2a.git"
+6)git commit -m "First commit"
+7)git status
+8)git push -u origin master
+9)git config --global user.name "Neer45"
+10)git config --global user.email "neerwane13l@gmail.com"
+11)git credential-manager configure
+12)git push -u origin master
+13)git status
+14)git add .
+15)git status
+16)git commit -m "second commit"
+17)git push -u origin master
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/username/Reponame.git 
+git push -u origin main 
